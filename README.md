@@ -1,2 +1,0 @@
-# seanmcloughl.in
-My website
