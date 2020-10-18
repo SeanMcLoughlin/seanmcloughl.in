@@ -1,18 +1,29 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About Me
+permalink: /about_me/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I am a pre-silicon validation engineer and software developer at Intel in Portland, Oregon. I have worked in IP validation for nearly three years and have designed 
+several software tools to aid in validation efficiency. I validated key components of [Intel's 11th-gen SOCs](eleventh-gen), and am currently working on more 
+exciting projects at Intel.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+With hardware validation, I have experience with Synopsys and Cadence EDA tools (such as VCS and Verdi), SystemVerilog, and UVM.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+For software development, I have professional experience writing code in C, C++, and Python. I self-taught myself Rust as a replacement for C++, and it is probably
+my most-loved language I've worked with.
+
+I graduated with a B.S. in Computer Engineering from the University of Michigan -- Ann Arbor in 2018. Go Blue!
+
+Outside of work I enjoy PC gaming, weight training, cooking, and reading about politics, philosophy, and the sciences.
+
+Feel free to follow me on the social media of your choice:
+
+[Twitter](https://twitter.com/sean_mclough), 
+[LinkedIn](https://www.linkedin.com/in/sean-mcloughlin-9730439b/), 
+[Medium](https://medium.com/@smcloughlin1015), 
+[GitHub](https://github.com/SeanMcLoughlin),
+[Instagram](https://www.instagram.com/smclough_/),
 
 
-[jekyll-organization]: https://github.com/jekyll
+[eleventh-gen]: https://en.wikipedia.org/wiki/Tiger_Lake_(microprocessor)
