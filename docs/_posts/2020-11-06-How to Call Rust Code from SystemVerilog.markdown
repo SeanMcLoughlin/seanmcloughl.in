@@ -104,48 +104,11 @@ One unfortunate truth about the DPI is that subsequent calls to DPI functions in
 For this comparison, the benchmark was a [Monte-Carlo simulation to estimate pi](https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/). This algorithm was written in Rust, with a subroutine to be called in a loop by Rust, and by a DPI function. 
 
 Here is the Rust:
-```rust
-extern crate rand;
-use rand::Rng;
+<script src="https://gist.github.com/SeanMcLoughlin/d5bb2351384f8de1cb97cfb8f0aecf6e.js"></script>
 
-fn monte_carlo_calc_pi(num_iter: u32) -> f64 {
-    let mut circle_points: u32 = 0;
-    let square_points: u32 = num_iter;
-    for _ in 0..num_iter {
-        circle_points = monte_carlo_subroutine(circle_points);
-    }
-    let pi: f64 = 4.0 * (circle_points as f64 / square_points as f64);
-    return pi;
-}
+And here is the SystemVerilog, calling the DPI method `num_iter` times:
+<script src="https://gist.github.com/SeanMcLoughlin/3e2b4bc93007f5bfacbbd0e95c618f03.js"></script>
 
-// This function is also called through the DPI
-#[no_mangle]
-fn monte_carlo_subroutine(mut circle_points: u32) -> u32 {
-    let x: f64 = rand::thread_rng().gen_range(-1.0, 1.0);
-    let y: f64 = rand::thread_rng().gen_range(-1.0, 1.0);
-    let d = x*x + y*y;
-    if d <= 1.0 {
-        circle_points += 1;
-    }
-    circle_points
-}
-```
-
-And here is the SystemVerilog, calling the DPI method `num_iter` times.
-```systemverilog
-import "DPI-C" function int monte_carlo_subroutine(int circle_points);
-
-function real monte_carlo_calc_pi(int num_iter;);
-    int circle_points = 0;
-    int square_points = num_iter;
-    real pi;
-    for (int i = 0; i < num_iter; i++) begin
-        circle_points = monte_carlo_subroutine(circle_points);
-    end 
-    pi = 4.0 * (real'(circle_points) / real'(square_points));
-    return pi;
-endfunction
-```
 
 These benchmarks were all run on an Intel Xeon W-3245 CPU @ 3.20GHz. 
 
