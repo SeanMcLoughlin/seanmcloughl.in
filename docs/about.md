@@ -23,7 +23,7 @@ Feel free to follow me on the social media of your choice:
 [LinkedIn](https://www.linkedin.com/in/sean-mcloughlin-9730439b/), 
 [Medium](https://medium.com/@smcloughlin1015), 
 [GitHub](https://github.com/SeanMcLoughlin),
-[Instagram](https://www.instagram.com/smclough_/),
+[Instagram](https://www.instagram.com/smclough_/).
 
 
 [eleventh-gen]: https://en.wikipedia.org/wiki/Tiger_Lake_(microprocessor)
