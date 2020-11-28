@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on seanmcloughl.in</title>
+    
+    
+    
+    <link>https://seanmcloughl.in/tags/rust/</link>
+    <description>Recent content in rust on seanmcloughl.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Sean McLoughlin. Built with&amp;nbsp;&lt;a href=&#39;https://seanmcloughl.in/about-blog&#39;&gt;Hugo&lt;/a&gt;.</copyright>
+    <lastBuildDate>Fri, 06 Nov 2020 21:31:31 -0700</lastBuildDate>
+    
+	<atom:link href="https://seanmcloughl.in/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Call Rust Code from SystemVerilog</title>
+      <link>https://seanmcloughl.in/posts/how-to-call-rust-from-systemverilog/</link>
+      <pubDate>Fri, 06 Nov 2020 21:31:31 -0700</pubDate>
+      
+      <guid>https://seanmcloughl.in/posts/how-to-call-rust-from-systemverilog/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The SystemVerilog Direct Programming Interface (DPI), at a high level, provides remote procedure calls in SystemVerilog. The entirety of the DPI&amp;rsquo;s definition can be read in the SystemVerilog IEEE standard (requires an account to access). Since SystemVerilog is quite a limiting language compared to general-purpose programming languages, being able to do remote procedure calls is an insanely powerful feature. However, it is commonly misunderstood that the DPI only allows users to call C functions.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>&#34;Modern&#34; Hardware Design</title>
+      <link>https://seanmcloughl.in/posts/modern-hardware-design/</link>
+      <pubDate>Mon, 14 Sep 2020 15:49:26 -0800</pubDate>
+      
+      <guid>https://seanmcloughl.in/posts/modern-hardware-design/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          While software development tools are better than ever, hardware development tools are still stuck in the 90’s. How can this be fixed? I am a pre-silicon validation engineer. What that means is that I write software to test, analyze, and stress hardware designs to ensure that they adhere to their architectural specifications. Aside from a Linux environment, The common tools that I use for my job are:
+ SystemVerilog: An IEEE-standard language designed for defining hardware at the Register Transfer Level (RTL), as well as the test benches to test that hardware.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        How to Call Rust Code from SystemVerilog ::
+        seanmcloughl.in — Musings about the intersection of hardware and software development.
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="The SystemVerilog Direct Programming Interface (DPI), at a high level, provides remote procedure calls in SystemVerilog. The entirety of the DPI&amp;rsquo;s definition can be read in the SystemVerilog IEEE standard (requires an account to access). Since SystemVerilog is quite a limiting language compared to general-purpose programming languages, being able to do remote procedure calls is an insanely powerful feature. However, it is commonly misunderstood that the DPI only allows users to call C functions."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://seanmcloughl.in/posts/how-to-call-rust-from-systemverilog/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://seanmcloughl.in/assets/style.css" />
+
+<link rel="stylesheet" href="https://seanmcloughl.in/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://seanmcloughl.in/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://seanmcloughl.in/img/favicon.png" />
+
+
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Call Rust Code from SystemVerilog"/>
+<meta name="twitter:description" content="The SystemVerilog Direct Programming Interface (DPI), at a high level, provides remote procedure calls in SystemVerilog. The entirety of the DPI&rsquo;s definition can be read in the SystemVerilog IEEE standard (requires an account to access). Since SystemVerilog is quite a limiting language compared to general-purpose programming languages, being able to do remote procedure calls is an insanely powerful feature. However, it is commonly misunderstood that the DPI only allows users to call C functions."/>
+
+
+
+<meta property="og:title" content="How to Call Rust Code from SystemVerilog" />
+<meta property="og:description" content="The SystemVerilog Direct Programming Interface (DPI), at a high level, provides remote procedure calls in SystemVerilog. The entirety of the DPI&rsquo;s definition can be read in the SystemVerilog IEEE standard (requires an account to access). Since SystemVerilog is quite a limiting language compared to general-purpose programming languages, being able to do remote procedure calls is an insanely powerful feature. However, it is commonly misunderstood that the DPI only allows users to call C functions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://seanmcloughl.in/posts/how-to-call-rust-from-systemverilog/" />
+<meta property="article:published_time" content="2020-11-06T21:31:31-07:00" />
+<meta property="article:modified_time" content="2020-11-06T21:31:31-07:00" /><meta property="og:site_name" content="seanmcloughl.in" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/about"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >seanmcloughl.in</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/posts">Blog</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span
+            >
+          </li>
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/future">Future</a></li>
+              
+            
+              
+                <li><a href="/present">Present</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/posts">Blog</a></li>
+      
+    
+      
+        <li><a href="/future">Future</a></li>
+      
+    
+      
+        <li><a href="/present">Present</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">How to Call Rust Code from SystemVerilog</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-11-06
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://seanmcloughl.in/tags/rust/">#rust</a>&nbsp;
+        
+          <a href="https://seanmcloughl.in/tags/systemverilog/">#systemverilog</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>The SystemVerilog Direct Programming Interface (DPI), at a high level, provides remote procedure calls in SystemVerilog. The entirety of the DPI&rsquo;s definition can be read in the <a href="https://ieeexplore.ieee.org/document/8299595">SystemVerilog IEEE standard</a> (requires an account to access). Since SystemVerilog is quite a limiting language compared to general-purpose programming languages, being able to do remote procedure calls is an insanely powerful feature. However, it is commonly misunderstood that the DPI only allows users to call C functions. While that is how it is defined in the SystemVerilog standard, that is actually <em>not true</em> – you can call virtually any code from the SystemVerilog DPI, provided that the compiler can link the functions like they are C functions. This article will demonstrate how you can do that with Rust.</p>
+<p>Note that the DPI not only allows RPCs in SystemVerilog, but it also allows RPCs <em>from</em> SystemVerilog in other general purpose languages. I won&rsquo;t cover the latter case, because I find there to be very few cases where you should call SystemVerilog code in another language. If you know of some practical use-cases, message me on <a href="https://www.twitter.com/@sean_mclough">Twitter</a> and let me know – I would be very interested in hearing your experiences.</p>
+<h3 id="how-the-dpi-normally-works">How the DPI Normally Works</h3>
+<p>Let me provide a brief overview of how the DPI normally works, with C. I will be using Synopsys VCS as the compiler/simulator, since it is an industry-standard tool and it is the only simulator that I have access to. Sorry, <a href="https://github.com/steveicarus/iverilog">Icarus Verilog</a>, but I don&rsquo;t think you even support DPI calls.</p>
+<p>A simple DPI function bridge looks like this:</p>
+<pre><code>// my_function.c
+extern &quot;C&quot; void my_function() {
+    printf(&quot;Hello, world!&quot;);
+}	
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-systemverilog" data-lang="systemverilog"><span style="color:#75715e">// my_import.sv
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;DPI&#34;</span> <span style="color:#66d9ef">void</span> my_function();
+
+<span style="color:#66d9ef">task</span> run_phase();
+    my_function();  <span style="color:#75715e">// When run, will print &#34;Hello, world!&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">endtask</span>
+</code></pre></div><p>As the comments above allude, when calling the function <code>my_function</code> in SystemVerilog, it ought to print the string <code>&quot;Hello, world!&quot;</code>. The difficult part now is linking the C code with SystemVerilog. To do this, you&rsquo;ll need to generate a shared object of the C code. <a href="https://www.gnu.org/software/libtool/manual/html_node/Creating-object-files.html">A quick Google search reveals how this is done</a>, for those who are unfamiliar:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcc -c my_function.c
+$ gcc -g -O -c my_function.c  -fPIC -DPIC -o my_function.o
+</code></pre></div><p>Now we have a shared object file that VCS can link with SystemVerilog. VCS has an unholy amount of flags, but I&rsquo;ve found the following to work for linking. If you know how to do this simpler, please let me know.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vcs -cc /usr/bin/gcc -ld /usr/bin/g++ -cpp /usr/bin/g++ -LDFLAGS <span style="color:#e6db74">&#34;-L&lt;folder_of_object_file&gt; -l&lt;object_name&gt; -Wl,-E -Wl,-rpath-link,&lt;folder_of_object_file&gt; -Wl,-rpath=&lt;folder_of_object_file&gt; &lt;systemverilog_file_to_compile&gt;
+</span></code></pre></div><p>The <code>&lt;object_name&gt;</code> above should be a subset of the object file&rsquo;s name. Namely, the object file should be named <code>lib&lt;object_name&gt;.so</code>. So just use that substring.</p>
+<p>That whole command line is kind of a mouthful. However, when we execute <code>./simv</code> after compiling with VCS, we are greeted with <code>&quot;Hello, world!&quot;</code>. Great!</p>
+<h3 id="beyond-c">Beyond C</h3>
+<p>If we want to build reusable, maintainable test-benches and RTL with SystemVerilog, we shouldn&rsquo;t limit ourselves to C. We should try to use the programming languages that make our lives as easy as possible. Luckily, with VCS, you actually are not required to use C for DPI calls. As long as you are able to create C-like headers for the functions you are calling with the DPI, you are able to use <em>any</em> language you want. Note that I haven&rsquo;t tried this with any other major compilers besides VCS, but I would assume that it is the same behavior.</p>
+<p>I can showcase this feature by creating a library with a single function in Rust, and calling that function in SystemVerilog. We can start with creating a new library crate:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">cargo new dpi_fns <span style="color:#f92672">--</span>lib
+</code></pre></div><p>Now, the <code>Cargo.toml</code> file needs to be updated to specify that this is a dynamic library you&rsquo;re creating. Add the following section to the file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">lib</span>]
+<span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;dpi_fns&#34;</span>
+<span style="color:#a6e22e">crate</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">type</span> = [<span style="color:#e6db74">&#34;dylib&#34;</span>]
+</code></pre></div><p>All this is doing is making our library a dynamic library – when it is compiled, it will create a shared object in the <code>target</code> directory of the crate. Now, let&rsquo;s create the functions that we can call through the DPI in <code>src/lib.rs</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[no_mangle]</span>
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">import_me</span>() {
+    println<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;Hello from Rust!&#34;</span>);
+}
+</code></pre></div><p>The <code>#[no_mangle]</code> attribute is required. As the name implies, this disables Rust&rsquo;s name-mangling and ensures that the symbol in the object file is named the same as its identifier. This ensures that we can use the DPI to call the function with the same name as in Rust. It&rsquo;s similar to how <code>extern &quot;C&quot;</code> is used to link C code with the DPI.</p>
+<p>To generate the <code>.so</code> file, just run <code>cargo build --release</code>. Debug builds with cargo do <em>not</em> generate the <code>.so</code> file in my experience, so <code>--release</code> is required. The <code>.so</code> file should be located in <code>target/release</code>.</p>
+<p>On the Rust side of things, it&rsquo;s as simple as that! Now all we have to do is import and call the function in SystemVerilog:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-systemverilog" data-lang="systemverilog"><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;DPI-C&#34;</span> <span style="color:#66d9ef">function</span> <span style="color:#66d9ef">void</span> import_me();
+
+<span style="color:#66d9ef">task</span> main();
+    import_me();
+<span style="color:#66d9ef">endtask</span>
+</code></pre></div><p>And link the <code>.so</code> file with VCS, as I explained with the command line previously.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vcs -cc /usr/bin/gcc -ld /usr/bin/g++ -cop /usr/bin/g++ -LDFLAGS <span style="color:#e6db74">&#34;-L~/dpi_fns/target/release -ldpi_fns -Wl,-E -Wl,-rpath-link,~/dpi_fns/target/release -Wl,-rpath=~/dpi_fns/target/release ~/dpi_fns_sv/dpi_fns_sv.sv 
+</span></code></pre></div><p>Run the <code>simv</code> that VCS generated, and voila! You successfully called Rust code from SystemVerilog!</p>
+<h3 id="performance">Performance</h3>
+<p>One unfortunate truth about the DPI is that subsequent calls to DPI functions incur a performance penalty. I wanted to test to see how much of a penalty this would incur. In order to do this, I needed to benchmark running the <code>simv</code> executable against a benchmark in some other language.</p>
+<p>For this comparison, the benchmark was a <a href="https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/">Monte-Carlo simulation to estimate pi</a>. This algorithm was written in Rust, with a subroutine to be called in a loop by Rust, and by a DPI function.</p>
+<p>Here is the Rust:</p>
+<!-- raw HTML omitted -->
+<p>And here is the SystemVerilog, calling the DPI method <code>num_iter</code> times:</p>
+<!-- raw HTML omitted -->
+<p>These benchmarks were all run on an Intel Xeon W-3245 CPU @ 3.20GHz.</p>
+<p>With <code>num_iter</code> set to 100,000,000, the Rust code build with <code>--release</code> finished in 1.824 microseconds, while the SystemVerilog took 4.383 microseconds – a 2.4x slowdown. I am actually pleasantly surprised by this. I thought that it would have been much worse. However, this just goes to show that you shouldn&rsquo;t decide to use the DPI for everything, <em>especially</em> if it is a method that is being called on every simulation tick. For example, don&rsquo;t write a clock duty-cycle checker with the DPI.</p>
+<h3 id="conclusion">Conclusion</h3>
+<ul>
+<li>The DPI is great for RPCs, but it does have a relatively hefty performance cost.</li>
+<li>You can (and should) use more than C code for the DPI.</li>
+<li>Please don&rsquo;t write your DPI code in C. At least use C++, and ideally use something with more benefits besides OOP (such as Rust&rsquo;s type-safety and <code>cargo</code> package manager, or Python&rsquo;s simplicity).</li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://seanmcloughl.in/posts/modern-hardware-design/">
+                  <span class="button__text">&#34;Modern&#34; Hardware Design</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Sean McLoughlin. Built with&nbsp;<a href='/about-blog'>Hugo</a>.</div>
+      
+  </div>
+</footer>
+
+<script src="https://seanmcloughl.in/assets/main.js"></script>
+<script src="https://seanmcloughl.in/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://seanmcloughl.in/posts/how-to-call-rust-from-systemverilog/</loc>
+    <lastmod>2020-11-06T21:31:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/posts/</loc>
+    <lastmod>2020-11-06T21:31:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/tags/rust/</loc>
+    <lastmod>2020-11-06T21:31:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/</loc>
+    <lastmod>2020-11-06T21:31:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/tags/systemverilog/</loc>
+    <lastmod>2020-11-06T21:31:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/tags/</loc>
+    <lastmod>2020-11-06T21:31:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/posts/modern-hardware-design/</loc>
+    <lastmod>2020-09-14T15:49:26-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/about-blog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/future/</loc>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/present/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on seanmcloughl.in</title>
+    
+    
+    
+    <link>https://seanmcloughl.in/categories/</link>
+    <description>Recent content in Categories on seanmcloughl.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Sean McLoughlin. Built with&amp;nbsp;&lt;a href=&#39;https://seanmcloughl.in/about-blog&#39;&gt;Hugo&lt;/a&gt;.</copyright>
+    
+	<atom:link href="https://seanmcloughl.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on seanmcloughl.in</title>
+    
+    
+    
+    <link>https://seanmcloughl.in/tags/</link>
+    <description>Recent content in Tags on seanmcloughl.in</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Sean McLoughlin. Built with&amp;nbsp;&lt;a href=&#39;https://seanmcloughl.in/about-blog&#39;&gt;Hugo&lt;/a&gt;.</copyright>
+    <lastBuildDate>Fri, 06 Nov 2020 21:31:31 -0700</lastBuildDate>
+    
+	<atom:link href="https://seanmcloughl.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>rust</title>
+      <link>https://seanmcloughl.in/tags/rust/</link>
+      <pubDate>Fri, 06 Nov 2020 21:31:31 -0700</pubDate>
+      
+      <guid>https://seanmcloughl.in/tags/rust/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>systemverilog</title>
+      <link>https://seanmcloughl.in/tags/systemverilog/</link>
+      <pubDate>Fri, 06 Nov 2020 21:31:31 -0700</pubDate>
+      
+      <guid>https://seanmcloughl.in/tags/systemverilog/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
