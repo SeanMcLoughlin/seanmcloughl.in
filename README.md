@@ -1,2 +1,2 @@
 # seanmcloughl.in
-My personal website. Made with GitHub pages and [Jekyll](https://jekyllrb.com/).
+My personal website. Made with GitHub Pages and [Hugo](https://gohugo.io/).
