@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  "\"Modern\" Hardware Design"
-date:   2020-09-14 15:49:26 -0700
-categories: rust systemverilog dpi
+title: "\"Modern\" Hardware Design"
+date: 2020-09-14T15:49:26-08:00
+tags: ["rust", "systemverilog"]
 ---
 
 ### While software development tools are better than ever, hardware development tools are still stuck in the 90’s. How can this be fixed?

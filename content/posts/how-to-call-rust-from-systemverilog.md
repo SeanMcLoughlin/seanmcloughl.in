@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "How to Call Rust Code from SystemVerilog"
-date:   2020-11-06 21:31:31 -0700
-categories: rust systemverilog dpi
+title: "How to Call Rust Code from SystemVerilog"
+date: 2020-11-06T21:31:31-07:00
+draft: false
+tags: ["rust", "systemverilog"]
 ---
 
 The SystemVerilog Direct Programming Interface (DPI), at a high level, provides remote procedure calls in SystemVerilog. The entirety of the DPI's definition can be read in the [SystemVerilog IEEE standard](https://ieeexplore.ieee.org/document/8299595) (requires an account to access). Since SystemVerilog is quite a limiting language compared to general-purpose programming languages, being able to do remote procedure calls is an insanely powerful feature. However, it is commonly misunderstood that the DPI only allows users to call C functions. While that is how it is defined in the SystemVerilog standard, that is actually _not true_ – you can call virtually any code from the SystemVerilog DPI, provided that the compiler can link the functions like they are C functions. This article will demonstrate how you can do that with Rust.

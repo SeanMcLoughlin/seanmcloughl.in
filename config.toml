@@ -1,0 +1,69 @@
+baseurl = "https://seanmcloughl.in"
+languageCode = "en-us"
+theme = "hello-friend"
+paginate = 5
+
+[params]
+  # dir name of your blog content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
+
+  # "light" or "dark"
+  defaultTheme = "dark"
+
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 2
+
+  # Show reading time in minutes for posts
+  showReadingTime = false
+
+  # Show table of contents at the top of your posts (defaults to false)
+  # Alternatively, add this param to post front matter for specific posts
+  # toc = true
+
+  # Show full page content in RSS feed items
+  #(default is Description or Summary metadata in the front matter)
+  # rssFullText = true
+
+[languages]
+  [languages.en]
+    title = "seanmcloughl.in"
+    subtitle = "Musings about the intersection of hardware and software development."
+    keywords = ""
+    copyright = "Sean McLoughlin. Built with&nbsp;<a href='/about-blog'>Hugo</a>."
+    menuMore = "Show more"
+    writtenBy = "Written by"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    minuteReadingTime = "min read"
+    dateFormatSingle = "2006-01-02"
+    dateFormatList = "2006-01-02"
+    lastModDisplay = "Last modified:"
+
+    [languages.en.params.logo]
+      logoText = "seanmcloughl.in"
+      logoHomeLink = "/about"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "About"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "Blog"
+        name = "Blog"
+        url = "/posts"
+	  [[languages.en.menu.main]]
+		identifier = "Present"
+		name = "Present"
+		url = "/present"
+	  [[languages.en.menu.main]]
+		identifier = "Future"
+		name = "Future"
+		url = "/future"
