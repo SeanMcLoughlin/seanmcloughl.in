@@ -5,11 +5,11 @@ title: "About"
 ### Introduction
 My name is Sean McLoughlin.
 
-I am a design verification engineer at Intel in Portland, OR. I've worked in IP validation for three years, worked on Intel's 11th-gen SOCs, and have designed several software tools to aid in design verification efficiency.
+I am a design verification engineer at Ampere Computing in Portland, OR. Previously I worked at Intel, where I worked on Intel's 11th-gen SOCs and designed several software tools to aid in DV efficiency.
 
 I have experience with Synopsys and Cadence EDA tools to assist with DV, such as VCS and Verdi, as well as extensive experience writing testbenches with UVM in SystemVerilog.
 
-I also have extensive experiene writing C++, Python, and Rust software, both in industry and as open-source software. 
+I also have extensive experience writing C++, Python, and Rust software, both in industry and as open-source software. 
 
 I graduated with a B.S. in Computer Engineering from the University of Michigan, Ann Arbor in 2018.
 
