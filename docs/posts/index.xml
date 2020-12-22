@@ -10,10 +10,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sean McLoughlin. Built with&amp;nbsp;&lt;a href=&#39;https://seanmcloughl.in/about-blog&#39;&gt;Hugo&lt;/a&gt;.</copyright>
-    <lastBuildDate>Fri, 06 Nov 2020 21:31:31 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 22 Dec 2020 12:07:17 -0800</lastBuildDate>
     
 	<atom:link href="https://seanmcloughl.in/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Easter Eggs Are Never Okay</title>
+      <link>https://seanmcloughl.in/posts/easter-eggs-are-never-okay/</link>
+      <pubDate>Tue, 22 Dec 2020 12:07:17 -0800</pubDate>
+      
+      <guid>https://seanmcloughl.in/posts/easter-eggs-are-never-okay/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The Parable You&amp;rsquo;re writing a class to connect to your company&amp;rsquo;s application. You and your colleagues all agree that the feature this class is for is the coolest thing you&amp;rsquo;ve ever heard of &amp;ndash; it&amp;rsquo;s the &amp;ldquo;bees knees,&amp;rdquo; one of your colleagues keeps jesting.
+Next thing you know, the driver of you mobbing session renames the class to the_bees_knees. Everyone giggles and moves on to working on other parts of the code base.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>How to Call Rust Code from SystemVerilog</title>

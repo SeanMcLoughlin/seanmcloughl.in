@@ -10,10 +10,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sean McLoughlin. Built with&amp;nbsp;&lt;a href=&#39;https://seanmcloughl.in/about-blog&#39;&gt;Hugo&lt;/a&gt;.</copyright>
-    <lastBuildDate>Fri, 06 Nov 2020 21:31:31 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 22 Dec 2020 12:07:17 -0800</lastBuildDate>
     
 	<atom:link href="https://seanmcloughl.in/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>codebase</title>
+      <link>https://seanmcloughl.in/tags/codebase/</link>
+      <pubDate>Tue, 22 Dec 2020 12:07:17 -0800</pubDate>
+      
+      <guid>https://seanmcloughl.in/tags/codebase/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>easter-egg</title>
+      <link>https://seanmcloughl.in/tags/easter-egg/</link>
+      <pubDate>Tue, 22 Dec 2020 12:07:17 -0800</pubDate>
+      
+      <guid>https://seanmcloughl.in/tags/easter-egg/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://seanmcloughl.in/tags/software/</link>
+      <pubDate>Tue, 22 Dec 2020 12:07:17 -0800</pubDate>
+      
+      <guid>https://seanmcloughl.in/tags/software/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>rust</title>
