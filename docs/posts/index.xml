@@ -10,10 +10,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sean McLoughlin. Built with&amp;nbsp;&lt;a href=&#39;https://seanmcloughl.in/about-blog&#39;&gt;Hugo&lt;/a&gt;.</copyright>
-    <lastBuildDate>Tue, 22 Dec 2020 12:07:17 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 14:45:50 -0800</lastBuildDate>
     
 	<atom:link href="https://seanmcloughl.in/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VLaDOS Dev Blog: Intro</title>
+      <link>https://seanmcloughl.in/posts/vlados-dev-blog-1-intro/</link>
+      <pubDate>Sun, 27 Dec 2020 14:45:50 -0800</pubDate>
+      
+      <guid>https://seanmcloughl.in/posts/vlados-dev-blog-1-intro/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Today, I&amp;rsquo;ve finally begun work on the SystemVerilog compiler and simulator, VLaDOS. This project has been a long time coming, and I&amp;rsquo;ve had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first major open-source project. Because of that, I&amp;rsquo;m going to do development blogs for each alpha release of the tool that has major features &amp;ndash; starting with this one.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Easter Eggs Are Never Okay</title>

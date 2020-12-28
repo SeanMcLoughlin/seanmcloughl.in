@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://seanmcloughl.in/posts/</loc>
+    <lastmod>2020-12-27T14:45:50-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/</loc>
+    <lastmod>2020-12-27T14:45:50-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seanmcloughl.in/posts/vlados-dev-blog-1-intro/</loc>
+    <lastmod>2020-12-27T14:45:50-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://seanmcloughl.in/tags/codebase/</loc>
     <lastmod>2020-12-22T12:07:17-08:00</lastmod>
   </url>
@@ -14,16 +29,6 @@
   
   <url>
     <loc>https://seanmcloughl.in/tags/easter-egg/</loc>
-    <lastmod>2020-12-22T12:07:17-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://seanmcloughl.in/posts/</loc>
-    <lastmod>2020-12-22T12:07:17-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://seanmcloughl.in/</loc>
     <lastmod>2020-12-22T12:07:17-08:00</lastmod>
   </url>
   
