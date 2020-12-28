@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        VLaDOS Dev Blog: Intro ::
+        seanmcloughl.in — Musings about the intersection of hardware and software development.
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Today, I&amp;rsquo;ve finally begun work on the SystemVerilog compiler and simulator, VLaDOS. This project has been a long time coming, and I&amp;rsquo;ve had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first major open-source project. Because of that, I&amp;rsquo;m going to do development blogs for each alpha release of the tool that has major features &amp;ndash; starting with this one."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://seanmcloughl.in/posts/vlados-dev-blog-1-intro/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://seanmcloughl.in/assets/style.css" />
+
+<link rel="stylesheet" href="https://seanmcloughl.in/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://seanmcloughl.in/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://seanmcloughl.in/img/favicon.png" />
+
+
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://seanmcloughl.in/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VLaDOS Dev Blog: Intro"/>
+<meta name="twitter:description" content="Today, I&rsquo;ve finally begun work on the SystemVerilog compiler and simulator, VLaDOS. This project has been a long time coming, and I&rsquo;ve had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first major open-source project. Because of that, I&rsquo;m going to do development blogs for each alpha release of the tool that has major features &ndash; starting with this one."/>
+
+
+
+<meta property="og:title" content="VLaDOS Dev Blog: Intro" />
+<meta property="og:description" content="Today, I&rsquo;ve finally begun work on the SystemVerilog compiler and simulator, VLaDOS. This project has been a long time coming, and I&rsquo;ve had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first major open-source project. Because of that, I&rsquo;m going to do development blogs for each alpha release of the tool that has major features &ndash; starting with this one." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://seanmcloughl.in/posts/vlados-dev-blog-1-intro/" />
+<meta property="article:published_time" content="2020-12-27T14:45:50-08:00" />
+<meta property="article:modified_time" content="2020-12-27T14:45:50-08:00" /><meta property="og:site_name" content="seanmcloughl.in" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/about"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >seanmcloughl.in</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/posts">Blog</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span
+            >
+          </li>
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/future">Future</a></li>
+              
+            
+              
+                <li><a href="/present">Present</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/posts">Blog</a></li>
+      
+    
+      
+        <li><a href="/future">Future</a></li>
+      
+    
+      
+        <li><a href="/present">Present</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">VLaDOS Dev Blog: Intro</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-27
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>Today, I&rsquo;ve finally begun work on the SystemVerilog compiler and simulator, <a href="https://github.com/SeanMcLoughlin/VLaDOS">VLaDOS</a>. This project has been a long time coming, and I&rsquo;ve had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first <em>major</em> open-source project. Because of that, I&rsquo;m going to do development blogs for each alpha release of the tool that has major features &ndash; starting with this one.</p>
+<h2 id="what-is-vlados">What is VLaDOS?</h2>
+<p>VLaDOS aims to be a free and open-source SystemVerilog compiler and simulator. The project has a few goals:</p>
+<ol>
+<li>Obviously, <strong>compile code that adheres to the SystemVerilog LRM into a simulator executable.</strong></li>
+<li>As much as is reasonable and possible, <strong>act as a drop-in replacement for most other EDA vendor compilers and simulators.</strong> Semiconductor companies should have minimal pain switching to this tool &ndash; otherwise they may never do so.</li>
+<li><strong>Remain free and open-source</strong> to allow anyone to simulate SystemVerilog anywhere.</li>
+</ol>
+<h2 id="whats-with-the-name-vlados">What&rsquo;s with the name &ldquo;VLaDOS?&rdquo;</h2>
+<p>VLaDOS is an acronym for <em>(System)Verilog Language: a Definitively Open Simulator</em>. It is also a play-on-words of <a href="https://en.wikipedia.org/wiki/GLaDOS">GLaDOS</a>, the AI antagonist of the popular <em>Portal</em> video game series.</p>
+<h2 id="why-are-you-working-on-this">Why are you working on this?</h2>
+<p>I&rsquo;ve discussed this in length in my <a href="https://seanmcloughl.in/posts/modern-hardware-design/">&ldquo;Modern&rdquo; Hardware Design</a> post, but the gist of the issue is that EDA vendors generally provide sub-par tools at extreme prices per license. Not only are these licenses are a non-trivial development cost for semiconductor companies, but any individual who isn&rsquo;t able to pay for a license has no way of simulating SystemVerilog code on their local machine.</p>
+<p>In this case, the only feasible option is to use <a href="https://www.edaplayground.com/">EDAPlayground</a>, but there are obvious downsides to this, namely that it requires an account, and that you have to run the code in a web browser.</p>
+<p>I like software development, I work in the semiconductor industry, and I see this as a major pain point for the industry at large. Given the circumstances, I almost feel like I have an obligation to work on things such as this.</p>
+<h2 id="why-rust">Why Rust?</h2>
+<p>Basically all the reasons that anyone would choose Rust over C++ for an application like this. It&rsquo;s more modern. It has attractive features. Its  not tied to linking with other C++ code (aside from LLVM, which there are Rust bindings for). I can think of several more reasons off the top of my head, but you get the idea.</p>
+<p>Maybe a few months down the line I&rsquo;ll realize that Rust was a terrible choice and I&rsquo;ll revert to using C++, but I highly doubt it.</p>
+<h2 id="this-sounds-great-how-can-i-help">This sounds great! How can I help?</h2>
+<p>Compilers are huge undertakings, and I know that I won&rsquo;t be able to complete this project by myself. If you know Rust and want to work on an interesting domain-specific language that was used to code your CPU/GPU, feel free to contact me via one of the social media channels on the <a href="https://seanmcloughl.in/about">about page</a>. Eventually, descriptive <a href="https://github.com/SeanMcLoughlin/VLaDOS/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">issues</a> will be filed, and you should look there instead.</p>
+<p>If you&rsquo;re not able to contribute via code, a financial contribution would mean a lot. You can <a href="https://github.com/SeanMcLoughlin">sponsor me on GitHub</a>, or you can <a href="https://www.buymeacoffee.com/smcloughlin">buy me a coffee</a>.</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://seanmcloughl.in/posts/easter-eggs-are-never-okay/">
+                  <span class="button__text">Easter Eggs Are Never Okay</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Sean McLoughlin. Built with&nbsp;<a href='/about-blog'>Hugo</a>.</div>
+      
+  </div>
+</footer>
+
+<script src="https://seanmcloughl.in/assets/main.js"></script>
+<script src="https://seanmcloughl.in/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
