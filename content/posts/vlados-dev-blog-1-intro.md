@@ -34,6 +34,6 @@ Maybe a few months down the line I'll realize that Rust was a terrible choice an
 
 ## This sounds great! How can I help?
 
-Compilers are huge undertakings, and I know that I won't be able to complete this project by myself. If you know Rust and want to work on an interesting domain-specific language that was used to code your CPU/GPU, feel free to contact me via one of the social media channels on the [about page](https://seanmcloughl.in/about). Eventually, descriptive [issues](https://github.com/SeanMcLoughlin/VLaDOS/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) will be filed, and you should look there instead.
+Compilers are huge undertakings, and I know that I won't be able to complete this project by myself. If you know Rust and want to work on an interesting domain-specific language that was used to code your CPU/GPU, feel free to chat on the project's [Gitter community](https://gitter.im/vlados-compiler). Eventually, descriptive [issues](https://github.com/SeanMcLoughlin/VLaDOS/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) will be filed, and you should look there instead.
 
 If you're not able to contribute via code, a financial contribution would mean a lot. You can [sponsor me on GitHub](https://github.com/SeanMcLoughlin), or you can [buy me a coffee](https://www.buymeacoffee.com/smcloughlin).
