@@ -10,10 +10,6 @@ I currently work as a design verification engineer at Ampere Computing. Previous
 
 In order of highest to lowest priority, this is what I'm working on currently:
 
-#### [VLaDOS](https://github.com/SeanMcLoughlin/VLaDOS)
-
-A free and open source SystemVerilog compiler and simulator written in Rust. Not yet ready for production. Looking for contributors!
-
 #### [vcd_rust](https://crates.io/crates/vcd_rust)
 
 A value change dump parser for Rust. The goal for this project is to create a parser for the VCD file type to be used in other projects. Rust was chosen due to its high performance.

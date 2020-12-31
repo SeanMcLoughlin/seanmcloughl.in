@@ -16,7 +16,7 @@
     
     
     <item>
-      <title>VLaDOS Dev Blog: Intro</title>
+      <title>VLaDOS Dev Blog: Intro (Also Titled: Do More Research Before Committing to a Project Like This)</title>
       <link>https://seanmcloughl.in/posts/vlados-dev-blog-1-intro/</link>
       <pubDate>Sun, 27 Dec 2020 14:45:50 -0800</pubDate>
       
@@ -29,7 +29,7 @@
         
         
         
-          Today, I&amp;rsquo;ve finally begun work on the SystemVerilog compiler and simulator, VLaDOS. This project has been a long time coming, and I&amp;rsquo;ve had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first major open-source project. Because of that, I&amp;rsquo;m going to do development blogs for each alpha release of the tool that has major features &amp;ndash; starting with this one.
+          EDIT (12/30/2020) VLaDOS is now defunct and its (empty) repository was removed. It had a very short life after I learned about already-existing tools to do meet its goals, such as LLHD (and, to an extent, Verilator). It makes far more sense to contribute to this project than to start something from scratch. I researched tools like this earlier this year and couldn&amp;rsquo;t find anything, but I guess LLHD released their paper earlier this year and I missed it.
           
         
         </description>
@@ -159,7 +159,7 @@ It is hosted with GitHub Pages.
           Mind Dump This is just a mind dump of projects I plan to work on in the future. DM me on Twitter if you&amp;rsquo;re interested in working with me, or feel free to take these ideas for your own projects.
 [ ] A terminal user interface waveform viewer. Inspired by tui-rs.
 [ ] A GUI waveform viewer to complement the above.
-[X] EDIT: Check out VLaDOS! A free and open-source SystemVerilog compiler.
+[X] EDIT: Check out LLHD! A free and open-source SystemVerilog compiler.
           
         
         </description>
@@ -181,7 +181,7 @@ It is hosted with GitHub Pages.
         
           Industry I currently work as a design verification engineer at Ampere Computing. Previously, I worked at Intel, also as a design verification engineer. Due to my non-disclosure agreements, I can&amp;rsquo;t mention what exactly I work/have worked on. You can see my skill set here.
 Open Source In order of highest to lowest priority, this is what I&amp;rsquo;m working on currently:
-VLaDOS A free and open source SystemVerilog compiler and simulator written in Rust.
+vcd_rust A value change dump parser for Rust. The goal for this project is to create a parser for the VCD file type to be used in other projects.
           
         
         </description>

@@ -10,7 +10,6 @@ This is just a mind dump of projects I plan to work on in the future. [DM me on 
 
 [ ] A GUI waveform viewer to complement the above.
 
-[X] EDIT: [Check out VLaDOS!](https://github.com/SeanMcLoughlin/VLaDOS) ~~A free and open-source SystemVerilog compiler. [icarus-verilog](http://iverilog.icarus.com/) doesn't support most of SystemVerilog as far as I know, and most other offerings are not free.~~
+[X] EDIT: [Check out LLHD!](https://github.com/fabianschuiki/llhd) ~~A free and open-source SystemVerilog compiler. [icarus-verilog](http://iverilog.icarus.com/) doesn't support most of SystemVerilog as far as I know, and most other offerings are not free.~~
 
 [ ] A free and open-source SystemVerilog build tool that manages dependencies (e.g. UVM). Something as simple to use as Rust's `cargo` would be nice.
-

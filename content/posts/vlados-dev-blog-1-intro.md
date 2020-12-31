@@ -1,8 +1,16 @@
 ---
-title: "VLaDOS Dev Blog: Intro"
+title: "VLaDOS Dev Blog: Intro (Also Titled: Do More Research Before Committing to a Project Like This)"
 date: 2020-12-27T14:45:50-08:00
 draft: false
 ---
+
+## EDIT (12/30/2020)
+
+VLaDOS is now defunct and its (empty) repository was removed. It had a very short life after I learned about already-existing tools to do meet its goals, such as [LLHD](https://github.com/fabianschuiki/llhd) (and, to an extent, [Verilator](https://www.veripool.org/wiki/verilator)). It makes far more sense to contribute to this project than to start something from scratch. I researched tools like this earlier this year and couldn't find *anything*, but I guess LLHD released their paper earlier this year and I missed it.
+
+Thanks to everyone who responded on Twitter with great feedback on this subject. I'm really glad there are a lot of people who work with HDLs who want to make the tool ecosystem better.
+
+## Original Article
 
 Today, I've finally begun work on the SystemVerilog compiler and simulator, [VLaDOS](https://github.com/SeanMcLoughlin/VLaDOS). This project has been a long time coming, and I've had to learn a lot to even get to the point of being able to start writing it. This is probably the most ambitious project I have ever taken up, and is my first *major* open-source project. Because of that, I'm going to do development blogs for each alpha release of the tool that has major features -- starting with this one.
 
