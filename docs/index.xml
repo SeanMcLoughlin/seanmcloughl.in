@@ -137,6 +137,7 @@ I also have extensive experience writing C++, Python, and Rust software, both in
           This site is built with Hugo.
 The theme is hello-friend.
 It is hosted with GitHub Pages.
+Comments are hosted with GitHub issues via Utterances. This is how I set it up with Hugo.
           
         
         </description>
